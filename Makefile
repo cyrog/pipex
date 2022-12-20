@@ -16,6 +16,7 @@ SDIR	=	./srcs/
 
 SRC		=	pipex.c		\
 			cmd_path.c	\
+			error.c		\
 
 LSRC	=		ft_isalpha.c \
 				ft_isdigit.c \
@@ -80,11 +81,13 @@ LNAME	=	libft
 all:		$(NAME)
 
 $(NAME):	$(ODIR) $(LOBJS) $(OBJS)
-	$(CC) $(IFLAGS) $(OBJS) $(LOBJS) -o $(NAME)
+	@$(CC) $(IFLAGS) $(OBJS) $(LOBJS) -o $(NAME)
 
 
 clean:
-	$(RM) $(addprefix $(ODIR), $(LOBJS:$(LDIR)%=%))
+	@$(RM) $(addprefix $(ODIR), $(LOBJS:$(LDIR)%=%))
+	@$(RM) $(addprefix $(ODIR), $(LOBJS:$(LDIR)%=%))
+	@if [ -d "$(ODIR)" ]; then rm -rf $(ODIR); fi
 
 fclean: clean
 		$(RM) $(NAME)

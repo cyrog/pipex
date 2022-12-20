@@ -6,7 +6,7 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:33:01 by cgross            #+#    #+#             */
-/*   Updated: 2022/12/20 11:39:15 by cgross           ###   ########.fr       */
+/*   Updated: 2022/12/20 15:17:41 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ typedef struct s_pip
 	int			file[2];
 	int			pipe[2];
 }			t_pip;
+
+void	error(char *str);
+void	noexec(char *str);
 
 size_t	ft_strlen(const char *s);
 void	ft_putstr_fd(int fd, char *s);
