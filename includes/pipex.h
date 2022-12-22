@@ -6,7 +6,7 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:33:01 by cgross            #+#    #+#             */
-/*   Updated: 2022/12/20 16:24:19 by cgross           ###   ########.fr       */
+/*   Updated: 2022/12/22 16:38:34 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ typedef struct s_pip
 	int			pid[2];
 	int			file[2];
 	int			pipe[2];
+	int			exit;
 }			t_pip;
 
 void	error(char *str);
+void	nofile(char *str);
 void	noexec(char *str);
 char	**ft_free_split(char **dst, int *char_nbr);
 

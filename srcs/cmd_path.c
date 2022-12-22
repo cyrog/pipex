@@ -6,7 +6,7 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:05:32 by cgross            #+#    #+#             */
-/*   Updated: 2022/12/20 16:13:36 by cgross           ###   ########.fr       */
+/*   Updated: 2022/12/22 14:41:33 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char	*get_right_path(char **envp, char *cmd)
 		path = ft_strjoin(temp, cmd);
 		if (access(path, X_OK) != -1)
 		{
-			printf("ME HAS ACCESS\n");
 			free(temp);
 			ft_free_split(all_paths, NULL);
 			return (path);

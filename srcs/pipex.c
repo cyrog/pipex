@@ -6,7 +6,7 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:12:11 by cgross            #+#    #+#             */
-/*   Updated: 2022/12/20 16:29:36 by cgross           ###   ########.fr       */
+/*   Updated: 2022/12/22 16:39:18 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,8 @@ int	main(int ac, char **av, char **envp)
 		exec_cmd2(&p, av, envp);
 	close_fd(&p);
 	waitpid(p.pid[0], NULL, 0);
-	int ex;
-	waitpid(p.pid[1], &ex, 0);
-	if (WIFEXITED(ex))
-		return (WEXITSTATUS(ex));
+	waitpid(p.pid[1], &p.exit, 0);
+	if (WIFEXITED(p.exit))
+		return (WEXITSTATUS(p.exit));
 	return (0);
 }
